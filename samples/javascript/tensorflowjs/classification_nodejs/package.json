@@ -1,0 +1,15 @@
+{
+  "name": "customvision-classification-sample",
+  "version": "1.0.0",
+  "description": "Sample scripts for classification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@microsoft/customvision-tfjs-node": "^1.0.0",
+    "yargs": "^15.4.1"
+  }
+}
