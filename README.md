@@ -6,6 +6,7 @@ This repository contains samples scripts to use exported models from [Custom Vis
 | Language | Platform | Link |
 | -------- | -------- | ---- |
 | Javascript | TensorFlow | [README](samples/javascript/tensorflowjs) |
+| Python   | ONNX     | [README](samples/python/onnx) |
 | Python   | OpenVino | [README](samples/python/openvino) |
 
 ## Resources
