@@ -12,6 +12,7 @@ class Model:
         assert len(self.session.get_inputs()) == 1
         self.input_shape = self.session.get_inputs()[0].shape[2:]
         self.input_name = self.session.get_inputs()[0].name
+        self.input_type = {'tensor(float)': np.float32, 'tensor(float16)': np.float16}[self.session.get_inputs()[0].type]
         self.output_names = [o.name for o in self.session.get_outputs()]
 
         self.is_bgr = False
@@ -32,7 +33,7 @@ class Model:
         if not self.is_range255:
             input_array = input_array / 255  # => Pixel values should be in range [0, 1]
 
-        outputs = self.session.run(self.output_names, {self.input_name: input_array})
+        outputs = self.session.run(self.output_names, {self.input_name: input_array.astype(self.input_type)})
         return {name: outputs[i] for i, name in enumerate(self.output_names)}
 
 
