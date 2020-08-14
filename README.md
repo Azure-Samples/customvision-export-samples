@@ -8,7 +8,8 @@ This repository contains samples scripts to use exported models from [Custom Vis
 | Javascript | TensorFlow.js | [README](samples/javascript/tensorflowjs) |
 | Python   | ONNX     | [README](samples/python/onnx) |
 | Python   | OpenVino | [README](samples/python/openvino) |
-| Python   | TensorFlow Frozen Graph | [README](samples/python/tensorflow) |
+| Python   | TensorFlow (Frozen Graph) | [README](samples/python/tensorflow) |
+| Python   | TensorFlow Lite | [README](samples/python/tensorflow_lite) |
 
 ## Resources
 * [Custom Vision Service documents](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
