@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Custom Vision classification sample</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.1.0/dist/tf.min.js"></script>
+		<script src="https://unpkg.com/@microsoft/customvision-tfjs"></script>
+	</head>
+	<body>
+		<input id="image_file" type="file" onChange="load(event)" />
+		<img id="image_view" onLoad="run()" />
+		<div id="result_view" />
+		<script>
+			function load(event) {
+				const reader = new FileReader();
+				reader.onload = async function(e) {
+					const image_view = document.getElementById('image_view');
+					image_view.src = e.target.result;
+				};
+				reader.readAsDataURL(event.target.files[0]);
+			}
+
+			async function run() {
+				const model = new cvstfjs.ClassificationModel();
+				await model.loadModelAsync('model.json');
+				const result = await model.executeAsync(document.getElementById('image_view'));
+				document.getElementById('result_view').innerHTML = result[0].map((x, i) => `Label ${i}: ${x}`).join("<br />");
+			}
+		</script>
+	</body>
+</html>
