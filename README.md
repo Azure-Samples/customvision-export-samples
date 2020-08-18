@@ -21,6 +21,13 @@ Please see this [document](https://docs.microsoft.com/en-us/azure/cognitive-serv
 Those sample scripts are not aiming to get identical results with Custom Vision's prediction APIs. There are slight differences in the pre-processing logic, which cause small difference in the inference results.
 
 
+## Related sample projects
+| Language | Platform | Repository |
+| -------- | -------- | ---------- |
+| Java     | Android  | https://github.com/Azure-Samples/cognitive-services-android-customvision-sample |
+| Swift, Objective-C | iOS | https://github.com/Azure-Samples/cognitive-services-ios-customvision-sample |
+| C#       | WinML    | https://github.com/Azure-Samples/cognitive-services-onnx-customvision-sample |
+
 ## Resources
 * [Custom Vision Service documents](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
 
