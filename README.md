@@ -6,6 +6,7 @@ This repository contains samples scripts to use exported models from [Custom Vis
 | Language | Model type | Link |
 | -------- | -------- | ---- |
 | Javascript | TensorFlow.js | [README](samples/javascript/tensorflowjs) |
+| Python   | CoreML   | [README](samples/python/coreml) |
 | Python   | ONNX     | [README](samples/python/onnx) |
 | Python   | OpenVino | [README](samples/python/openvino) |
 | Python   | TensorFlow (Frozen Graph) | [README](samples/python/tensorflow) |
