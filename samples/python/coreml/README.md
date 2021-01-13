@@ -2,6 +2,8 @@
 
 | Task | Domain | Export Platform | Export Flavor | Link |
 |------|--------|-----------------|---------------|------|
+| Classification | General (compact) [S1] | CoreML | null | [README](classification) |
+| Classification | General (compact) [S1] | CoreML | CoreMLFloat16 | [README](classification) |
 | Classification | General (compact) | CoreML | null | [README](classification) |
 | Classification | General (compact) | CoreML | CoreMLFloat16 | [README](classification) |
 | Object Detection | General (compact) [S1] | CoreML | null | [README](object_detection_s1) |

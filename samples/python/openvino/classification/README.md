@@ -2,6 +2,8 @@
 
 | Task | Domain | Export Platform | Export Flavor |
 |------|--------|-----------------|---------------|
+| Classification | General (compact) [S1] | OpenVino | null |
+| Classification | General (compact) [S1] | OpenVino | NoPostProcess |
 | Classification | General (compact) | OpenVino | null |
 | Classification | General (compact) | OpenVino | NoPostProcess |
 

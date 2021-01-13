@@ -2,6 +2,7 @@
 
 | Task | Domain | Export Platform | Export Flavor |
 | ---- | ------ | --------------- | ------------- |
+| Classification | General (compact) [S1] | TensorFlow | TensorFlowJs |
 | Classification | General (compact) | TensorFlow | TensorFlowJs |
 
 This script loads the customvision-tfjs library from CDN.

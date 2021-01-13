@@ -2,6 +2,7 @@
 
 | Task | Domain | Export Platform | Export Flavor | Link |
 |------|--------|-----------------|---------------|------|
+| Classification | General (compact) [S1] | TensorFlow | null | [README](classification_s1) |
 | Classification | General (compact) | TensorFlow | null | [README](classification) |
 | Object Detection | General (compact) [S1] | TensorFlow | null | [README](object_detection_s1) |
 | Object Detection | General (compact) | TensorFlow | null | [README](object_detection) |
