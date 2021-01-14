@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@microsoft/customvision-tfjs-node": "^1.0.0",
+    "@microsoft/customvision-tfjs-node": "^1.1.0",
     "yargs": "^15.4.1"
   }
 }
