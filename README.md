@@ -9,10 +9,11 @@ This repository contains samples scripts to use exported models from [Custom Vis
 | Python   | CoreML   | [README](samples/python/coreml) |
 | Python   | ONNX     | [README](samples/python/onnx) |
 | Python   | OpenVino | [README](samples/python/openvino) |
-| Python   | TensorFlow (Frozen Graph) | [README](samples/python/tensorflow) |
+| Python   | TensorFlow (Frozen Graph) [^1] | [README](samples/python/tensorflow) |
 | Python   | TensorFlow (Saved Model) | [README](samples/python/tensorflow_saved_model) |
 | Python   | TensorFlow Lite | [README](samples/python/tensorflow_lite) |
 
+[^1]: This is the default export flavor for TensorFlow platform.
 
 ## How to export a model from Custom Vision Service?
 Please see this [document](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/export-your-model).
