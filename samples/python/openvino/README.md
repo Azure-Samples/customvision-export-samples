@@ -11,12 +11,11 @@
 | Object Detection | General (compact) | OpenVino | NoPostProcess | [README](object_detection_no_postprocess) |
 | Object Detection | General (compact) [S1] | OpenVino | NoPostProcess | [README](object_detection_no_postprocess_s1) |
 
+# Prerequisites
+Python 3.7+
 
 # Setup
-## Use Docker (Recommended)
-```
-docker build -t openvino .
+```bash
+pip install openvino~=2021.3.0 Pillow
 ```
 
-## Install manually
-Please follow OpenVino's [official document](https://docs.openvinotoolkit.org/latest/index.html) to install the OpenVino packages.

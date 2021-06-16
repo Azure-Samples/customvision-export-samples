@@ -1,5 +1,6 @@
 import argparse
 import pathlib
+import xml.etree.ElementTree as ET
 import numpy as np
 import PIL.Image
 from openvino.inference_engine import IECore
@@ -72,13 +73,13 @@ class Model:
     def __init__(self, xml_filepath, bin_filepath):
         ie = IECore()
         net = ie.read_network(str(xml_filepath), str(bin_filepath))
-        assert len(net.inputs) == 1 and len(net.outputs) == 1
+        assert len(net.input_info) == 1 and len(net.outputs) == 1
         self.nms = NonMaxSuppression(MAX_DETECTIONS, PROB_THRESHOLD, IOU_THRESHOLD)
         self.exec_net = ie.load_network(network=net, device_name='CPU')
-        self.input_name = list(net.inputs.keys())[0]
-        self.input_shape = net.inputs[self.input_name].shape[2:]
+        self.input_name = list(net.input_info.keys())[0]
+        self.input_shape = net.input_info[self.input_name].input_data.shape[2:]
         self.output_name = list(net.outputs.keys())[0]
-        self.anchors = self._extract_anchors_from_network(net, self.output_name)
+        self.anchors = self._extract_anchors_from_network(xml_filepath)
 
     def predict(self, image_filepath):
         # The model requires RGB[0-1] NCHW input.
@@ -91,10 +92,14 @@ class Model:
         return self._postprocess(outputs[self.output_name], self.anchors)
 
     @staticmethod
-    def _extract_anchors_from_network(network, output_name):
-        yolo_layer = network.layers[output_name]
-        anchors = [float(a) for a in yolo_layer.params['anchors'].split(',')]
-        return np.array(anchors, dtype=np.float).reshape(-1, 2)
+    def _extract_anchors_from_network(xml_filepath):
+        root = ET.parse(xml_filepath).getroot()
+        for layer in root.find('layers').findall('layer'):
+            if layer.get('type') == 'RegionYolo':
+                anchors = [float(a) for a in layer.find('data').get('anchors').split(',')]
+                return np.array(anchors, dtype=np.float).reshape(-1, 2)
+
+        raise RuntimeError("RegionYolo layer is not found.")
 
     def _postprocess(self, outputs, anchors):
         assert len(outputs.shape) == 2 and outputs.shape[0] == 1

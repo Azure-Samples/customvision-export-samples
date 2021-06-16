@@ -72,11 +72,11 @@ class Model:
     def __init__(self, xml_filepath, bin_filepath):
         ie = IECore()
         net = ie.read_network(str(xml_filepath), str(bin_filepath))
-        assert len(net.inputs) == 1 and len(net.outputs) == 2
+        assert len(net.input_info) == 1 and len(net.outputs) == 2
         self.nms = NonMaxSuppression(MAX_DETECTIONS, PROB_THRESHOLD, IOU_THRESHOLD)
         self.exec_net = ie.load_network(network=net, device_name='CPU')
-        self.input_name = list(net.inputs.keys())[0]
-        self.input_shape = net.inputs[self.input_name].shape[2:]
+        self.input_name = list(net.input_info.keys())[0]
+        self.input_shape = net.input_info[self.input_name].input_data.shape[2:]
         assert set(net.outputs.keys()) == set(['raw_probs', 'raw_boxes'])
 
     def predict(self, image_filepath):
