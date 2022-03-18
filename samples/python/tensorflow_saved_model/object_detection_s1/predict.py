@@ -16,7 +16,6 @@ class Model:
     def predict(self, image_filepath):
         image = PIL.Image.open(image_filepath).resize(self.input_shape)
         input_array = np.array(image, dtype=np.float32)[np.newaxis, :, :, :]
-        input_array = input_array[:, :, :, (2, 1, 0)]  # => BGR
 
         input_tensor = tensorflow.convert_to_tensor(input_array)
         outputs = self.serve(input_tensor)

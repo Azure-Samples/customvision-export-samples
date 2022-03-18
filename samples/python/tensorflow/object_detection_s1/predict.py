@@ -20,7 +20,6 @@ class Model:
     def predict(self, image_filepath):
         image = PIL.Image.open(image_filepath).resize(self.input_shape)
         input_array = np.array(image, dtype=np.float32)[np.newaxis, :, :, :]
-        input_array = input_array[:, :, :, (2, 1, 0)]  # => BGR
 
         with tensorflow.compat.v1.Session() as sess:
             tensorflow.import_graph_def(self.graph_def, name='')
