@@ -6,6 +6,7 @@ This repository contains samples scripts to use exported models from [Custom Vis
 | Language | Model type | Link |
 | -------- | -------- | ---- |
 | C#       | ONNX     | [README](samples/csharp/onnx) |
+| C#       | ONNX & ML.NET    | [README](samples/csharp/mlnet) |
 | Javascript | TensorFlow.js | [README](samples/javascript/tensorflowjs) |
 | Python   | CoreML   | [README](samples/python/coreml) |
 | Python   | ONNX     | [README](samples/python/onnx) |
