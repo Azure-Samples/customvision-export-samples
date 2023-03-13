@@ -2,7 +2,7 @@
 
 | Task | Domain | Export Platform | Export Flavor | Link |
 |------|--------|-----------------|---------------|------|
-| Classification | General (compact) [S1] | ONNX | OnnxFloat16 | [README](classification_s1) |
+| Classification | General (compact) [S1] | ONNX | null | [README](classification_s1) |
 | Object Detection | General (compact) [S1] | ONNX | null | [README](object_detection_s1) |
 
 ## Description
