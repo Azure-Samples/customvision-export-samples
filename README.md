@@ -30,7 +30,6 @@ Those sample scripts are not aiming to get identical results with Custom Vision'
 | -------- | -------- | ---------- |
 | Java     | Android  | https://github.com/Azure-Samples/cognitive-services-android-customvision-sample |
 | Swift, Objective-C | iOS | https://github.com/Azure-Samples/cognitive-services-ios-customvision-sample |
-| C#       | WinML    | https://github.com/Azure-Samples/cognitive-services-onnx-customvision-sample |
 
 ## Resources
 * [Custom Vision Service documents](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
